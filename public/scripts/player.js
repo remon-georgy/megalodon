@@ -2,16 +2,30 @@ var Player = React.createClass({
   render: function() {
     return (
       <div className="player">
-        <h1>props</h1>
-        <div className="music21 tinyNotation">{this.props.tinyNotation}</div>
-        <h1>s.renderScrollableCanvas</h1>
-        <div id="can"></div>
+        <h1>Props based</h1>
+        <div id="props-based-can"></div>
+        {/* <h1>Follow Score</h1>
+        <div id="can"></div> */}
       </div>
     );
   },
   componentDidMount: function() {
+    //this.initFollowScore();
+    this.initProps();
+  },
+  initProps: function() {
+    var _reactComponent = this;
     require(['music21'], function () {
-
+      var stream = music21.tinyNotation.TinyNotation(_reactComponent.props.tinyNotation);
+      // TODO this method might be deprecated.
+      // @see music21.stream.Stream.renderScrollableCanvas();
+      stream.renderScrollableCanvas($('#props-based-can'));
+      var toolBar = stream.getPlayToolbar();
+      console.log(toolBar);
+    });
+  },
+  initFollowScore: function() {
+    require(['music21'], function () {
       var s1 = music21.tinyNotation.TinyNotation('4/4 c2 d#4 e8 f g4 r8 B c4~ c16 d32 e f g a b c\'1 b4 a g f e8 f e d c4 B c1 d2 c2 B2 c2 d1 c1');
       var m = s1.get(0);
       m.get(0).stemDirection = 'down';
