@@ -10,7 +10,8 @@
     "serve-index": "^1.8.0"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "prepublish" : "git submodule update --init --recursive"
   },
   "devDependencies": {
     "eslint": "^2.13.1",
