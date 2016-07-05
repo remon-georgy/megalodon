@@ -7,17 +7,9 @@ var app = express();
 
 app.set('port', (process.env.PORT || 3000));
 
-
-/*
-app.use('/', express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-*/
-
 app.use(express.static('public'));
 
 // Directory listing for sub-public directories.
-// TODO should I specify them one by one?
 app.use('/scripts', serveIndex('public/scripts', {'icons': true}));
 app.use('/music21j', serveIndex('public/music21j', {'icons': true}));
 
@@ -31,11 +23,6 @@ app.use(function(req, res, next) {
   res.setHeader('Cache-Control', 'no-cache');
   next();
 });
-
-// Serving static files.
-
-
-
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
