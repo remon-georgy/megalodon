@@ -1,3 +1,8 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+var $ = require('jquery');
+var music21 = require('../music21j/src/music21');
+
 var Player = React.createClass({
   render: function() {
     return (
@@ -9,16 +14,16 @@ var Player = React.createClass({
   },
   componentDidMount: function() {
     var _reactComponent = this;
-    require(['music21'], function () {
-      var stream = music21.tinyNotation.TinyNotation(_reactComponent.props.tinyNotation);
+  //  require(['../music21j/src/music21'], function () {
+    var stream = music21.tinyNotation.TinyNotation(_reactComponent.props.tinyNotation);
       // TODO this method might be deprecated.
       // @see music21.stream.Stream.renderScrollableCanvas();
-      stream.renderScrollableCanvas($('#can'));
+    stream.renderScrollableCanvas($('#can'));
 
       // Toolbar
-      var toolBar = stream.getPlayToolbar();
-      console.log(toolBar);
-    });
+    var toolBar = stream.getPlayToolbar();
+    console.log(toolBar);
+    //});
   }
 });
 

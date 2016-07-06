@@ -2,40 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Music21j followScore wrapper</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+    <title>Tiny notation web player</title>
   </head>
   <body>
-    <!-- Option1: load MIT lib -->
-    <!-- script data-main="http://web.mit.edu/music21/music21j/src/music21"
-      src="http://web.mit.edu/music21/music21j/ext/require/require.js" warnBanner="no">
-    </script-->
-
-    <!-- Option2: load from Python server at localhost:8000 -->
-    <!-- script data-main="http://localhost:8000/src/music21"
-      src="scripts/require.js">
-    </script -->
-
-    <!-- Local lib FTW! -->
-    <script data-main="/music21j/src/music21"
-      src="/scripts/require.js">
-    </script>
-
-    <!-- ReactJS entry point -->
-    <script type="text/babel" src="scripts/player.js"></script>
-
-    <!-- Content -->
-    <!-- div class="music21 tinyNotation" tinyNotation=""> 2/4 c2 d e4 f#8. g16 r4 c"4</div -->
     <div id="content"></div>
-    
-
-    <script type="text/babel">
-      // To get started with this tutorial running your own code, simply remove
-      // the script tag loading scripts/example.js and start writing code here.
-    </script>
+    <script src="bin/bundle.js"></script>
   </body>
 </html>

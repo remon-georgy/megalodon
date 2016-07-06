@@ -2,21 +2,29 @@
   "name": "player",
   "version": "0.0.0",
   "private": true,
-  "description": "Wrapping Music21j followScore example in a React component.",
+  "description": "Tiny notation web player.",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "jquery": "^3.0.0",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
     "serve-index": "^1.8.0"
   },
   "scripts": {
     "start": "nodemon server.js",
-    "prepublish" : "git submodule update --init --recursive"
+    "prepublish": "git submodule update --init --recursive"
   },
   "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
     "eslint": "^2.13.1",
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-requirejs": "^0.9.4",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "webpack": "^1.13.1"
   }
 }
