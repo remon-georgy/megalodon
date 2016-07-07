@@ -1,17 +1,18 @@
 
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
   entry: './public/src/app.js',
   output: {
     filename: './public/bin/bundle.js'
   },
-  devtool: 'eval-source-map',
+  devtool: false,
   module: {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'public/src/'),
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
