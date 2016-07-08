@@ -14,8 +14,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "requirejs"
+        "react"
     ],
     "rules": {
         "indent": [
