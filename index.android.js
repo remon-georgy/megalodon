@@ -4,33 +4,25 @@
  * @flow
  */
 
+import requirejs from 'requirejs';
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  Text,
-  View
-} from 'react-native';
-
-// TODO useimport
-
-
+import $ from 'jquery';
+import { AppRegistry,  Text,  View} from 'react-native';
 
 class player extends Component {
   constructor(props) {
     super(props);
     
     var _reactComponent = this;
-    var requirejs = require('requirejs');
-    // require(['./public/music21j/src/music21'], function () {
-    //   var stream = music21.tinyNotation.TinyNotation(_reactComponent.props.tinyNotation);
-    //     // TODO this method might be deprecated.
-    //     // @see music21.stream.Stream.renderScrollableCanvas();
-    //   stream.renderScrollableCanvas($('#can'));
-    //
-    //     // Toolbar
-    //   var toolBar = stream.getPlayToolbar();
-    //   console.log(toolBar);
-    // });
+    require(['./public/music21j/src/music21'], function () {
+      var stream = music21.tinyNotation.TinyNotation(_reactComponent.props.tinyNotation);
+        // TODO this method might be deprecated.
+        // @see music21.stream.Stream.renderScrollableCanvas();
+      stream.renderScrollableCanvas($('#can'));
+      // Toolbar
+      var toolBar = stream.getPlayToolbar();
+      console.log(toolBar);
+    });
   }
 
   render() {
